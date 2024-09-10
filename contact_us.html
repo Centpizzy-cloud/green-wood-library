@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Book Reviews - Greenwood Community Library</title>
+    <title>Contact Us - Greenwood Community Library</title>
     <link rel="stylesheet" href="styles.css"> <!-- Optional external stylesheet -->
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background-color: #f4f4f4;
         }
         header {
             background-color: #4CAF50;
@@ -45,23 +45,38 @@
         h1 {
             color: #333;
         }
-        .review {
+        .contact-form {
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact-form label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
             margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
-        .review h3 {
-            margin: 0;
-            color: #4CAF50;
+        .contact-form button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
         }
-        .review p {
-            margin-top: 10px;
-            line-height: 1.6;
-        }
-        .add-review {
-            margin-top: 40px;
+        .contact-form button:hover {
+            background-color: #45a049;
         }
         footer {
             background-color: #333;
@@ -75,8 +90,8 @@
 <body>
 
     <header>
-        <h1>Community Book Reviews</h1>
-        <p>Read and share your thoughts on books with the Greenwood community</p>
+        <h1>Contact Greenwood Community Library</h1>
+        <p>We'd love to hear from you! Reach out to us with your inquiries or feedback.</p>
     </header>
 
     <nav>
@@ -90,28 +105,20 @@
     </nav>
 
     <div class="container">
-        <section class="reviews">
-            <h1>Recent Reviews</h1>
+        <section class="contact-form">
+            <h1>Get in Touch</h1>
+            <form action="submit_contact.php" method="POST">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
-            <div class="review">
-                <h3>The Great Gatsby by F. Scott Fitzgerald</h3>
-                <p>"A timeless classic that beautifully captures the spirit of the Jazz Age. The tragic story of Gatsby and his love for Daisy resonates deeply. Fitzgerald's writing is poetic and haunting." – <em>Emily S.</em></p>
-            </div>
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-            <div class="review">
-                <h3>To Kill a Mockingbird by Harper Lee</h3>
-                <p>"A profound story that tackles the complexities of racial injustice and moral growth. The characters, particularly Atticus Finch, have stayed with me long after I finished the book." – <em>James T.</em></p>
-            </div>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6" placeholder="Enter your message" required></textarea>
 
-            <div class="review">
-                <h3>1984 by George Orwell</h3>
-                <p>"A chilling dystopian novel that feels more relevant with each passing year. Orwell's vision of a world where freedom and privacy are stripped away is thought-provoking and terrifying." – <em>Linda K.</em></p>
-            </div>
-        </section>
-
-        <section class="add-review">
-            <h2>Add Your Review</h2>
-            <p>Share your thoughts on a book you've recently read! Simply email us your review, and we will feature it on this page.</p>
+                <button type="submit">Send Message</button>
+            </form>
         </section>
     </div>
 
